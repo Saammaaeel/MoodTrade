@@ -23,12 +23,12 @@ export function useBiometricData(): BiometricData {
     // Simulate real-time biometric data updates
     const interval = setInterval(() => {
       setData(prevData => ({
-        heartRate: Math.max(60, Math.min(100, prevData.heartRate + (Math.random() - 0.5) * 4)),
-        hrv: Math.max(20, Math.min(80, prevData.hrv + (Math.random() - 0.5) * 6)),
-        stressLevel: Math.max(0, Math.min(10, prevData.stressLevel + (Math.random() - 0.5) * 0.8)),
-        gsr: Math.max(5, Math.min(15, prevData.gsr + (Math.random() - 0.5) * 1.2)),
-        movement: Math.max(0, Math.min(3000, prevData.movement + (Math.random() - 0.5) * 200)),
-        sleep: Math.max(4, Math.min(10, prevData.sleep + (Math.random() - 0.5) * 0.2)),
+        heartRate: Math.round(Math.max(60, Math.min(100, prevData.heartRate + (Math.random() - 0.5) * 4))),
+        hrv: Math.round(Math.max(20, Math.min(80, prevData.hrv + (Math.random() - 0.5) * 6))),
+        stressLevel: Math.round(Math.max(0, Math.min(10, prevData.stressLevel + (Math.random() - 0.5) * 0.8)) * 10) / 10,
+        gsr: Math.round(Math.max(5, Math.min(15, prevData.gsr + (Math.random() - 0.5) * 1.2)) * 10) / 10,
+        movement: Math.round(Math.max(0, Math.min(3000, prevData.movement + (Math.random() - 0.5) * 200))),
+        sleep: Math.round(Math.max(4, Math.min(10, prevData.sleep + (Math.random() - 0.5) * 0.2)) * 10) / 10,
       }));
     }, 3000);
 
