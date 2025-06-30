@@ -75,9 +75,9 @@ export function useJournal() {
       type: entryData.type || 'manual',
       trade: entryData.trade,
       emotions: entryData.emotions || {
-        preStress: Math.random() * 10,
-        postStress: Math.random() * 10,
-        confidence: Math.random() * 10,
+        preStress: Math.round(Math.random() * 10 * 10) / 10,
+        postStress: Math.round(Math.random() * 10 * 10) / 10,
+        confidence: Math.round(Math.random() * 10 * 10) / 10,
       },
     };
 
